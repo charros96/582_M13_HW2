@@ -45,7 +45,7 @@ def __default__():
     
     # TODO: Add code here to complete the recursive call
     if (self.dao_address.balance>0):
-        _attack()
+        self._attack()
         
     
     pass
