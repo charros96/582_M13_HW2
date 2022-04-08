@@ -15,7 +15,7 @@ def __init__():
 def _attack() -> bool:
     assert self.dao_address != ZERO_ADDRESS
     
-    if self.dao_address.userBalances[self.owner_address] > 0:
+    if DAO(dao_address).userBalances[self.owner_address] > 0:
         DAO(dao_address).deposit(value = deposit_amount)
         
 
